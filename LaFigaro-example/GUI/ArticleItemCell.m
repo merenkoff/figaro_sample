@@ -10,7 +10,7 @@
 @interface ArticleItemCell ()
 {
     IBOutlet __weak UIImageView *_pictureView;
-    IBOutlet __weak UILabel *_titleLabel;
+    IBOutlet __weak UITextView *_titleLabel;
     IBOutlet __weak UILabel *_subtitleLabel;
 }
 
@@ -24,7 +24,6 @@
     
     
     // Do not change text color when highlighted
-    _titleLabel.highlightedTextColor = _titleLabel.textColor;
     _subtitleLabel.highlightedTextColor = _subtitleLabel.textColor;
 
 }
