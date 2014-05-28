@@ -55,7 +55,11 @@
 
 -(NSString *)getContent
 {
-    return [NSString stringWithFormat:@"<html><body>%@</body></html>", _content];
+    if (self.imageLink) {
+        return [NSString stringWithFormat:@"<html><body><img src=\"%@\"  height=\"182\" width=\"280\"><b>%@</b> %@</body></html>", [self detailImageLink], _subtitle, _content];
+    }
+
+    return [NSString stringWithFormat:@"<html><body><b>%@</b> %@</body></html>", _subtitle, _content];
 }
 
 @end

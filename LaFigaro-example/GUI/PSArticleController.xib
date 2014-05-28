@@ -7,7 +7,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PSArticleController">
             <connections>
                 <outlet property="_contentWeb" destination="alW-g1-SLh" id="hwa-kE-btp"/>
-                <outlet property="_pictureView" destination="xdm-bJ-1KO" id="MCc-NN-6fB"/>
                 <outlet property="_titleLabel" destination="Jva-16-yuv" id="AdH-YA-3dT"/>
                 <outlet property="view" destination="iN0-l3-epB" id="o4Q-MG-mrg"/>
             </connections>
@@ -17,21 +16,21 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="xdm-bJ-1KO">
-                    <rect key="frame" x="20" y="124" width="280" height="182"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
                 <webView contentMode="scaleToFill" id="alW-g1-SLh">
-                    <rect key="frame" x="20" y="314" width="280" height="210"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <rect key="frame" x="0.0" y="129" width="320" height="395"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </webView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Title for " selectable="NO" id="Jva-16-yuv">
-                    <rect key="frame" x="20" y="70" width="280" height="51"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="Jva-16-yuv">
+                    <rect key="frame" x="0.0" y="70" width="320" height="51"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <string key="text">Serena Williams perd sa
+
+
+couronne</string>
+                    <fontDescription key="fontDescription" name=".LucidaGrandeUI" family=".Lucida Grande UI" pointSize="16"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                 </textView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
