@@ -33,6 +33,22 @@
     return self;
 }
 
+
+#pragma mark - Categories
+- (void)downloadCategoriesWithComplete:(void(^)(NSArray*))complete
+{
+    [self cancelAllHTTPOperationsWithMethod:@"GET" path:@"categories"];
+    [self getPath:@"categories"
+       parameters:nil
+          success:^(AFHTTPRequestOperation *operation, NSArray *arrayData) {
+              complete(arrayData);
+          }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              NSLog(@"ERROR %@", [error description]);
+              complete(nil);
+          }];
+}
+
 #pragma mark - Articles
 - (void)downloadArticles:(NSString *)category complete:(void(^)(NSString*, NSArray*))complete
 {
@@ -43,9 +59,11 @@
 
               if ([arrayData count] == 2) {
                   NSArray *timeStampArray = [arrayData firstObject];
-                  NSDictionary *timeStampDict = [timeStampArray firstObject];
-                  if (timeStampDict) {
-                        complete([timeStampDict objectForKey:@"timestamp"], arrayData[1]);
+                  if (timeStampArray != [NSNull null]) {
+                      NSDictionary *timeStampDict = [timeStampArray firstObject];
+                      if (timeStampDict) {
+                          complete([timeStampDict objectForKey:@"timestamp"], arrayData[1]);
+                      }
                   }
                   
               }

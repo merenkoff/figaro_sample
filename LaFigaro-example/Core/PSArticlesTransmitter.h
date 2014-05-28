@@ -13,7 +13,10 @@
 
 + (instancetype)sharedArticlesTransmitter;
 
-- (void)downloadArticles:(NSString *)category complete:(void(^)(NSString*, NSArray*))complete;
+//Category
+- (void)downloadCategoriesWithComplete:(void(^)(NSArray*))complete;
 
+//Articles
+- (void)downloadArticles:(NSString *)category complete:(void(^)(NSString*, NSArray*))complete;
 - (void)downloadArticle:(NSString *)articleID complete:(void (^)(NSDictionary *))complete;
 @end

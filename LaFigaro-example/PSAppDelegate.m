@@ -7,7 +7,7 @@
 //
 
 #import "PSAppDelegate.h"
-#import "PSArticlesVController.h"
+#import "PSCategoriesVController.h"
 
 @implementation PSAppDelegate
 
@@ -16,10 +16,12 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
-    PSArticlesVController *_rootController = [[PSArticlesVController alloc] initWithNibName:@"PSArticlesVController" bundle:nil];
+    PSCategoriesVController *_rootController = [[PSCategoriesVController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
+                                                                                  navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal
+                                                                                                options:nil];
     
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:_rootController];
-    
+    [_rootController.navigationController.navigationBar setTranslucent:NO];
     //_rootController;
     [self.window makeKeyAndVisible];
     return YES;

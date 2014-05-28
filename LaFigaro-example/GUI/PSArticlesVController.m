@@ -13,13 +13,15 @@
 #import "PSArticlesManager.h"
 #import "PSArticlesTransmitter.h"
 
-#define MAIN_CATEGORY @"QWN0dWFsaXTDqXNBY3R1YWxpdMOpcw=="
-
 NSString *const kReuseCellID = @"kReuseArticleItemCell";
 
 @interface PSArticlesVController ()
 {
     NSArray *_articles;
+    NSString *_categoryName;
+    NSInteger _currentCattegory;
+
+    __weak IBOutlet UIPageControl *_pageControl;
     __weak IBOutlet UITableView *_tableView;
     NSString *_category;
     UIRefreshControl *_refreshControl;
@@ -51,15 +53,18 @@ NSString *const kReuseCellID = @"kReuseArticleItemCell";
     [_refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
     [_tableView addSubview:_refreshControl];
     
-    _category = MAIN_CATEGORY;
+}
+
+- (void)configDataAndFiles
+{
+
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self configTable];
-    
-
+    [self configDataAndFiles];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -97,6 +102,11 @@ NSString *const kReuseCellID = @"kReuseArticleItemCell";
     return cell;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section;
+{
+    return _categoryName;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     __weak PSArticle *article = [self articleAtIndexPath:indexPath];
@@ -130,13 +140,14 @@ NSString *const kReuseCellID = @"kReuseArticleItemCell";
 }
 
 #pragma mark - Load & Parce DATA
-- (void) reloadDataForCategory:(NSString *)category
+- (void) reloadDataForCategory:(NSString *)category withName:(NSString *)categoryName
 {
 
     [_refreshControl beginRefreshing];
     [_tableView setContentOffset:CGPointMake(0, - _refreshControl.frame.size.height) animated:YES];
     
     _category = category;
+    _categoryName = categoryName;
     [[PSArticlesTransmitter sharedArticlesTransmitter] downloadArticles:_category
                                                                complete:^(NSString *timeStamp, NSArray *returnedArticles)
      {
@@ -153,7 +164,7 @@ NSString *const kReuseCellID = @"kReuseArticleItemCell";
 
 -(void) refreshTable
 {
-    [self reloadDataForCategory:_category];
+    [self reloadDataForCategory:_category withName:_categoryName];
 }
 
 @end

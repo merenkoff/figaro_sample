@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		532E2A0FA4E24C018FAC586C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0F2F4AA06E9439993752505 /* libPods.a */; };
+		856999CA193685BC00AE7CD9 /* PSCategoriesVController.m in Sources */ = {isa = PBXBuildFile; fileRef = 856999C9193685BC00AE7CD9 /* PSCategoriesVController.m */; };
 		85D735EC1935CF7000C723DD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D735EB1935CF7000C723DD /* Foundation.framework */; };
 		85D735EE1935CF7000C723DD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D735ED1935CF7000C723DD /* CoreGraphics.framework */; };
 		85D735F01935CF7000C723DD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D735EF1935CF7000C723DD /* UIKit.framework */; };
@@ -43,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		856999C8193685BC00AE7CD9 /* PSCategoriesVController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCategoriesVController.h; sourceTree = "<group>"; };
+		856999C9193685BC00AE7CD9 /* PSCategoriesVController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCategoriesVController.m; sourceTree = "<group>"; };
 		85D735E81935CF7000C723DD /* LaFigaro-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LaFigaro-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85D735EB1935CF7000C723DD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		85D735ED1935CF7000C723DD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -185,6 +188,8 @@
 				85D736201935D2F800C723DD /* ArticleItemCell.h */,
 				85D7364119362A0500C723DD /* ArticleItemCell.m */,
 				85D736221935D2F800C723DD /* ArticleItemCell.xib */,
+				856999C8193685BC00AE7CD9 /* PSCategoriesVController.h */,
+				856999C9193685BC00AE7CD9 /* PSCategoriesVController.m */,
 				85D7361B1935D0AB00C723DD /* PSArticlesVController.h */,
 				85D7361C1935D0AB00C723DD /* PSArticlesVController.m */,
 				85D7361D1935D0AB00C723DD /* PSArticlesVController.xib */,
@@ -368,6 +373,7 @@
 				85D735FC1935CF7000C723DD /* PSAppDelegate.m in Sources */,
 				85D7364619362D1100C723DD /* PSArticleController.m in Sources */,
 				85D736301935F36700C723DD /* PSArticlesManager.m in Sources */,
+				856999CA193685BC00AE7CD9 /* PSCategoriesVController.m in Sources */,
 				85D7361E1935D0AB00C723DD /* PSArticlesVController.m in Sources */,
 				85D7364219362A0500C723DD /* ArticleItemCell.m in Sources */,
 			);

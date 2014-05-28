@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PSArticlesVController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface PSCategoriesVController : UIPageViewController <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
+
 @property (nonatomic, assign) NSInteger currentCattegory;
-- (void) reloadDataForCategory:(NSString *)category withName:(NSString *)categoryName;
+@property (nonatomic, assign) NSInteger maxCattegory;
 
 @end
