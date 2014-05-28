@@ -20,7 +20,9 @@ NSString *const kReuseCellID = @"kReuseArticleItemCell";
 @interface PSArticlesVController ()
 {
     NSArray *_articles;
-    IBOutlet UITableView *_tableView;
+    __weak IBOutlet UITableView *_tableView;
+    NSString *_category;
+    UIRefreshControl *_refreshControl;
 }
 
 @end
@@ -44,6 +46,12 @@ NSString *const kReuseCellID = @"kReuseArticleItemCell";
     cellNib = [UINib nibWithNibName:@"ArticleItemCell" bundle:classBundle];
  
     [_tableView registerNib:cellNib forCellReuseIdentifier:kReuseCellID];
+    
+    _refreshControl = [[UIRefreshControl alloc] init];
+    [_refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
+    [_tableView addSubview:_refreshControl];
+    
+    _category = MAIN_CATEGORY;
 }
 
 - (void)viewDidLoad
@@ -51,19 +59,13 @@ NSString *const kReuseCellID = @"kReuseArticleItemCell";
     [super viewDidLoad];
     [self configTable];
     
-    [[PSArticlesTransmitter sharedArticlesTransmitter] downloadArticles:MAIN_CATEGORY
-                                                               complete:^(NSString *timeStamp, NSArray *returnedArticles)
 
-    {
-        //Save to PSArticlesManager;
-        PSArticlesManager *manager = [PSArticlesManager sharedArticlesManager];
-        [manager parceArticlesToArray:returnedArticles];
-        
-        _articles = [manager articles];
-        [_tableView reloadData];
-        
-    }];
+}
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self refreshTable];
 }
 
 - (void)didReceiveMemoryWarning
@@ -125,6 +127,33 @@ NSString *const kReuseCellID = @"kReuseArticleItemCell";
 - (PSArticle *)articleAtIndexPath:(NSIndexPath *)indexPath
 {
     return _articles[indexPath.row];
+}
+
+#pragma mark - Load & Parce DATA
+- (void) reloadDataForCategory:(NSString *)category
+{
+
+    [_refreshControl beginRefreshing];
+    [_tableView setContentOffset:CGPointMake(0, - _refreshControl.frame.size.height) animated:YES];
+    
+    _category = category;
+    [[PSArticlesTransmitter sharedArticlesTransmitter] downloadArticles:_category
+                                                               complete:^(NSString *timeStamp, NSArray *returnedArticles)
+     {
+         //Save to PSArticlesManager;
+         PSArticlesManager *manager = [PSArticlesManager sharedArticlesManager];
+         [manager parceArticlesToArray:returnedArticles];
+         
+         _articles = [manager articles];
+         [_tableView reloadData];
+         [_refreshControl endRefreshing];
+         
+     }];
+}
+
+-(void) refreshTable
+{
+    [self reloadDataForCategory:_category];
 }
 
 @end
