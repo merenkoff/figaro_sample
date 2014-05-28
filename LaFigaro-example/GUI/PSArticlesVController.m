@@ -109,26 +109,12 @@ NSString *const kReuseCellID = @"kReuseArticleItemCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    __weak PSArticle *article = [self articleAtIndexPath:indexPath];
-    [[PSArticlesTransmitter sharedArticlesTransmitter] downloadArticle:article.ID
-                                                              complete:^(NSDictionary *fullArticle)
-    {
-        if (fullArticle) {
-            [article addDetailFromDictionary:fullArticle];
-            
-            NSLog(@"Article \n %@", fullArticle);
-            
-            NSBundle *classBundle = [NSBundle bundleForClass:[PSArticleController class]];
-            PSArticleController *articleController = [[PSArticleController alloc] initWithNibName:@"PSArticleController" bundle:classBundle];
-            [articleController view];
-            [self.navigationController pushViewController:articleController animated:YES];
-            articleController.article = article;
-        } else {
-            //We must show error because detail page didn't downloaded
-            
-        }
-        
-    }];
+    GRKPageViewController *articlePages = [GRKPageViewController new];
+    articlePages.delegate = self;
+    articlePages.dataSource = self;
+    [articlePages setCurrentIndex:indexPath.row animated:YES];
+    
+    [self.navigationController pushViewController:articlePages animated:YES];
     
 }
 
@@ -136,7 +122,12 @@ NSString *const kReuseCellID = @"kReuseArticleItemCell";
 
 - (PSArticle *)articleAtIndexPath:(NSIndexPath *)indexPath
 {
-    return _articles[indexPath.row];
+    return [self articleAtIndex:indexPath.row];
+}
+
+- (PSArticle *)articleAtIndex:(NSInteger)index
+{
+    return _articles[index];
 }
 
 #pragma mark - Load & Parce DATA
@@ -165,6 +156,37 @@ NSString *const kReuseCellID = @"kReuseArticleItemCell";
 -(void) refreshTable
 {
     [self reloadDataForCategory:_category withName:_categoryName];
+}
+
+#pragma mark - Slide Data
+- (NSUInteger)pageCount
+{
+    return [_articles count];
+}
+
+- (UIViewController *)viewControllerForIndex:(NSUInteger)index
+{
+    NSBundle *classBundle = [NSBundle bundleForClass:[PSArticleController class]];
+
+    __strong PSArticleController *articleController = [[PSArticleController alloc] initWithNibName:@"PSArticleController" bundle:classBundle];
+    [articleController view];
+    
+    __weak PSArticle *article = [self articleAtIndex:index];
+    
+    articleController.article = article;
+    [[PSArticlesTransmitter sharedArticlesTransmitter] downloadArticle:article.ID
+                                                              complete:^(NSDictionary *fullArticle)
+     {
+         if (fullArticle) {
+             [article addDetailFromDictionary:fullArticle];
+             articleController.article = article;
+         } else {
+             //We must show error because detail page didn't downloaded
+             
+         }
+     }];
+    
+    return articleController;
 }
 
 @end

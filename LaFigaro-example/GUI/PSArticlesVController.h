@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <GRKPageViewController/GRKPageViewController.h>
 
-@interface PSArticlesVController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface PSArticlesVController : UIViewController <UITableViewDataSource, UITableViewDelegate, GRKPageViewControllerDataSource, GRKPageViewControllerDelegate>
 @property (nonatomic, assign) NSInteger currentCattegory;
 - (void) reloadDataForCategory:(NSString *)category withName:(NSString *)categoryName;
 
