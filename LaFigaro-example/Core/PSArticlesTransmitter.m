@@ -7,6 +7,9 @@
 //
 
 #import "PSArticlesTransmitter.h"
+#import "AFNetworking.h"
+
+#define kAPIBaseURL @"http://figaro.service.yagasp.com/article/"
 
 @implementation PSArticlesTransmitter
 
@@ -15,19 +18,29 @@
     static dispatch_once_t once;
     static id sharedInstance;
     dispatch_once(&once, ^{
-        sharedInstance = [PSArticlesTransmitter clientWithBaseURL:[NSURL URLWithString:@"http://figaro.service.yagasp.com/article/"]];
+        sharedInstance = [[self alloc] initWithBaseURL:[NSURL URLWithString:kAPIBaseURL]];
     });
     return sharedInstance;
 }
 
+- (id)initWithBaseURL:(NSURL *)URL
+{
+    self = [super initWithBaseURL:URL];
+    if (self) {
+        [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
+        [self setDefaultHeader:@"Accept" value:@"application/json"];
+    }
+    return self;
+}
+
+#pragma mark - Articles
 - (void)downloadArticles:(NSString *)category complete:(void(^)(NSString*, NSArray*))complete
 {
     [self cancelAllHTTPOperationsWithMethod:@"GET" path:[NSString stringWithFormat:@"header/%@",category]];
     [self getPath:[NSString stringWithFormat:@"header/%@",category]
        parameters:nil
-          success:^(AFHTTPRequestOperation *operation, NSData *responseObject) {
-              NSArray *arrayData = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
-              //NSLog(@"ARRAY of Articles:\n%@", arrayData);
+          success:^(AFHTTPRequestOperation *operation, NSArray *arrayData) {
+
               if ([arrayData count] == 2) {
                   NSArray *timeStampArray = [arrayData firstObject];
                   NSDictionary *timeStampDict = [timeStampArray firstObject];
@@ -48,16 +61,13 @@
     [self cancelAllHTTPOperationsWithMethod:@"GET" path:[NSString stringWithFormat:@"%@", articleID]];
     [self getPath:[NSString stringWithFormat:@"%@", articleID]
        parameters:nil
-          success:^(AFHTTPRequestOperation *operation, NSData *responseObject) {
-              NSDictionary *dictData = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+          success:^(AFHTTPRequestOperation *operation, NSDictionary *dictData) {
               complete(dictData);
           }
           failure:^(AFHTTPRequestOperation *operation, NSError *error) {
               NSLog(@"ERROR %@", [error description]);
               complete(nil);
           }];
-
-
 }
 
 @end
