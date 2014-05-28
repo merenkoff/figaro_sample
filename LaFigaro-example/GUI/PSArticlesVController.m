@@ -9,6 +9,11 @@
 #import "PSArticlesVController.h"
 #import "ArticleItemCell.h"
 
+#import "PSArticlesManager.h"
+#import "PSArticlesTransmitter.h"
+
+#define MAIN_CATEGORY @"QWN0dWFsaXTDqXNBY3R1YWxpdMOpcw=="
+
 NSString *const kReuseCellID = @"kReuseArticleItemCell";
 
 @interface PSArticlesVController ()
@@ -45,6 +50,20 @@ NSString *const kReuseCellID = @"kReuseArticleItemCell";
 {
     [super viewDidLoad];
     [self configTable];
+    
+    [[PSArticlesTransmitter sharedArticlesTransmitter] downloadArticles:MAIN_CATEGORY
+                                                               complete:^(NSString *timeStamp, NSArray *returnedArticles)
+
+    {
+        //Save to PSArticlesManager;
+        PSArticlesManager *manager = [PSArticlesManager sharedArticlesManager];
+        [manager parceArticlesToArray:returnedArticles];
+        
+        _articles = [manager articles];
+        [_tableView reloadData];
+        
+    }];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,8 +80,7 @@ NSString *const kReuseCellID = @"kReuseArticleItemCell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
-
+    return [_articles count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -70,9 +88,9 @@ NSString *const kReuseCellID = @"kReuseArticleItemCell";
     ArticleItemCell *cell = [tableView dequeueReusableCellWithIdentifier:kReuseCellID forIndexPath:indexPath];
     NSAssert(cell, @"ERROR: You must register cell: [_tableView registerNib:cell forCellReuseIdentifier:cellID]; ");
 
-    cell.title = @"Article name\nTesting long text with\nlines 2";
-    cell.description = @"Article Description";
-
+    cell.title = [_articles[indexPath.row] title];
+    cell.description = [_articles[indexPath.row] subtitle];
+    cell.imageLink = [_articles[indexPath.row] imageLink];
     return cell;
 }
 

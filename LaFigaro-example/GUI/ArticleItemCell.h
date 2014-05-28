@@ -6,8 +6,9 @@
 //  Copyright (c) 2014 PlaySoft. All rights reserved.
 //
 #import <UIKit/UIKit.h>
+#import "ImageLoader.h"
 
-@interface ArticleItemCell : UITableViewCell
+@interface ArticleItemCell : UITableViewCell <ImageLoaderProtocol>
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *description;

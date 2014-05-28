@@ -49,7 +49,23 @@
 - (void)setImageLink:(NSString *)imageLink
 {
     _imageLink = [imageLink copy];
+    if (_imageLink) {
+        [[ImageLoader sharedLoader] downloadImage:_imageLink to:self];
+    } else {
+        [self didLoadImage:nil fromUrlString:_imageLink];
+    }
+    
 }
 
+- (void)didLoadImage:(UIImage *)image fromUrlString:(NSString *)urlString
+{
+    if (image && [urlString isEqualToString:self.imageLink])
+    {
+        _pictureView.image = image;
+        _pictureView.hidden = NO;
+    } else {
+        _pictureView.hidden = YES;
+    }
+}
 
 @end

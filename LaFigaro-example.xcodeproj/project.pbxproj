@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		532E2A0FA4E24C018FAC586C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0F2F4AA06E9439993752505 /* libPods.a */; };
 		85D735EC1935CF7000C723DD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D735EB1935CF7000C723DD /* Foundation.framework */; };
 		85D735EE1935CF7000C723DD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D735ED1935CF7000C723DD /* CoreGraphics.framework */; };
 		85D735F01935CF7000C723DD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D735EF1935CF7000C723DD /* UIKit.framework */; };
@@ -21,9 +22,12 @@
 		85D736111935CF7100C723DD /* LaFigaro_exampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D736101935CF7100C723DD /* LaFigaro_exampleTests.m */; };
 		85D7361E1935D0AB00C723DD /* PSArticlesVController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D7361C1935D0AB00C723DD /* PSArticlesVController.m */; };
 		85D7361F1935D0AB00C723DD /* PSArticlesVController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85D7361D1935D0AB00C723DD /* PSArticlesVController.xib */; };
-		85D736231935D2F800C723DD /* ArticleItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D736211935D2F800C723DD /* ArticleItemCell.m */; };
 		85D736241935D2F800C723DD /* ArticleItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85D736221935D2F800C723DD /* ArticleItemCell.xib */; };
 		85D736261935DA3900C723DD /* photoDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = 85D736251935DA3900C723DD /* photoDefault.png */; };
+		85D7362F1935F36700C723DD /* PSArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D7362A1935F36700C723DD /* PSArticle.m */; };
+		85D736301935F36700C723DD /* PSArticlesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D7362C1935F36700C723DD /* PSArticlesManager.m */; };
+		85D736311935F36700C723DD /* PSArticlesTransmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D7362E1935F36700C723DD /* PSArticlesTransmitter.m */; };
+		85D7363919361D4400C723DD /* ImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D7363819361D4400C723DD /* ImageLoader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,9 +61,18 @@
 		85D7361C1935D0AB00C723DD /* PSArticlesVController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSArticlesVController.m; sourceTree = "<group>"; };
 		85D7361D1935D0AB00C723DD /* PSArticlesVController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSArticlesVController.xib; sourceTree = "<group>"; };
 		85D736201935D2F800C723DD /* ArticleItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleItemCell.h; sourceTree = "<group>"; };
-		85D736211935D2F800C723DD /* ArticleItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleItemCell.m; sourceTree = "<group>"; };
 		85D736221935D2F800C723DD /* ArticleItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleItemCell.xib; sourceTree = "<group>"; };
 		85D736251935DA3900C723DD /* photoDefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photoDefault.png; sourceTree = "<group>"; };
+		85D736291935F36700C723DD /* PSArticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSArticle.h; sourceTree = "<group>"; };
+		85D7362A1935F36700C723DD /* PSArticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSArticle.m; sourceTree = "<group>"; };
+		85D7362B1935F36700C723DD /* PSArticlesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSArticlesManager.h; sourceTree = "<group>"; };
+		85D7362C1935F36700C723DD /* PSArticlesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSArticlesManager.m; sourceTree = "<group>"; };
+		85D7362D1935F36700C723DD /* PSArticlesTransmitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSArticlesTransmitter.h; sourceTree = "<group>"; };
+		85D7362E1935F36700C723DD /* PSArticlesTransmitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSArticlesTransmitter.m; sourceTree = "<group>"; };
+		85D7363719361D4400C723DD /* ImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageLoader.h; sourceTree = "<group>"; };
+		85D7363819361D4400C723DD /* ImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLoader.m; sourceTree = "<group>"; };
+		B1097E36DA214BD0A66184E3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		E0F2F4AA06E9439993752505 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +83,7 @@
 				85D735EE1935CF7000C723DD /* CoreGraphics.framework in Frameworks */,
 				85D735F01935CF7000C723DD /* UIKit.framework in Frameworks */,
 				85D735EC1935CF7000C723DD /* Foundation.framework in Frameworks */,
+				532E2A0FA4E24C018FAC586C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,10 +103,12 @@
 		85D735DF1935CF7000C723DD = {
 			isa = PBXGroup;
 			children = (
+				85D736271935F36700C723DD /* Core */,
 				85D735F11935CF7000C723DD /* LaFigaro-example */,
 				85D7360A1935CF7000C723DD /* LaFigaro-exampleTests */,
 				85D735EA1935CF7000C723DD /* Frameworks */,
 				85D735E91935CF7000C723DD /* Products */,
+				B1097E36DA214BD0A66184E3 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +128,7 @@
 				85D735ED1935CF7000C723DD /* CoreGraphics.framework */,
 				85D735EF1935CF7000C723DD /* UIKit.framework */,
 				85D736041935CF7000C723DD /* XCTest.framework */,
+				E0F2F4AA06E9439993752505 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -162,13 +179,44 @@
 			children = (
 				85D736251935DA3900C723DD /* photoDefault.png */,
 				85D736201935D2F800C723DD /* ArticleItemCell.h */,
-				85D736211935D2F800C723DD /* ArticleItemCell.m */,
 				85D736221935D2F800C723DD /* ArticleItemCell.xib */,
 				85D7361B1935D0AB00C723DD /* PSArticlesVController.h */,
 				85D7361C1935D0AB00C723DD /* PSArticlesVController.m */,
 				85D7361D1935D0AB00C723DD /* PSArticlesVController.xib */,
 			);
 			path = GUI;
+			sourceTree = "<group>";
+		};
+		85D736271935F36700C723DD /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				85D7363619361D4400C723DD /* ImageLoader */,
+				85D736281935F36700C723DD /* Articles */,
+				85D7362D1935F36700C723DD /* PSArticlesTransmitter.h */,
+				85D7362E1935F36700C723DD /* PSArticlesTransmitter.m */,
+			);
+			name = Core;
+			path = "LaFigaro-example/Core";
+			sourceTree = "<group>";
+		};
+		85D736281935F36700C723DD /* Articles */ = {
+			isa = PBXGroup;
+			children = (
+				85D736291935F36700C723DD /* PSArticle.h */,
+				85D7362A1935F36700C723DD /* PSArticle.m */,
+				85D7362B1935F36700C723DD /* PSArticlesManager.h */,
+				85D7362C1935F36700C723DD /* PSArticlesManager.m */,
+			);
+			path = Articles;
+			sourceTree = "<group>";
+		};
+		85D7363619361D4400C723DD /* ImageLoader */ = {
+			isa = PBXGroup;
+			children = (
+				85D7363719361D4400C723DD /* ImageLoader.h */,
+				85D7363819361D4400C723DD /* ImageLoader.m */,
+			);
+			path = ImageLoader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,9 +226,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 85D736141935CF7100C723DD /* Build configuration list for PBXNativeTarget "LaFigaro-example" */;
 			buildPhases = (
+				158B333D58BD470480F53EF5 /* Check Pods Manifest.lock */,
 				85D735E41935CF7000C723DD /* Sources */,
 				85D735E51935CF7000C723DD /* Frameworks */,
 				85D735E61935CF7000C723DD /* Resources */,
+				EF8C18537AA44246ADA0A9AC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -265,15 +315,51 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		158B333D58BD470480F53EF5 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EF8C18537AA44246ADA0A9AC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		85D735E41935CF7000C723DD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85D736311935F36700C723DD /* PSArticlesTransmitter.m in Sources */,
+				85D7363919361D4400C723DD /* ImageLoader.m in Sources */,
+				85D7362F1935F36700C723DD /* PSArticle.m in Sources */,
 				85D735F81935CF7000C723DD /* main.m in Sources */,
 				85D735FC1935CF7000C723DD /* PSAppDelegate.m in Sources */,
+				85D736301935F36700C723DD /* PSArticlesManager.m in Sources */,
 				85D7361E1935D0AB00C723DD /* PSArticlesVController.m in Sources */,
-				85D736231935D2F800C723DD /* ArticleItemCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +473,7 @@
 		};
 		85D736151935CF7100C723DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1097E36DA214BD0A66184E3 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -400,6 +487,7 @@
 		};
 		85D736161935CF7100C723DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1097E36DA214BD0A66184E3 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -470,6 +558,7 @@
 				85D736161935CF7100C723DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		85D736171935CF7100C723DD /* Build configuration list for PBXNativeTarget "LaFigaro-exampleTests" */ = {
 			isa = XCConfigurationList;
@@ -478,6 +567,7 @@
 				85D736191935CF7100C723DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
