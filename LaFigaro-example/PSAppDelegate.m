@@ -17,7 +17,10 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     PSArticlesVController *_rootController = [[PSArticlesVController alloc] initWithNibName:@"PSArticlesVController" bundle:nil];
-    self.window.rootViewController = _rootController;
+    
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:_rootController];
+    
+    //_rootController;
     [self.window makeKeyAndVisible];
     return YES;
 }

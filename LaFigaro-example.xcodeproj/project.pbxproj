@@ -23,11 +23,13 @@
 		85D7361E1935D0AB00C723DD /* PSArticlesVController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D7361C1935D0AB00C723DD /* PSArticlesVController.m */; };
 		85D7361F1935D0AB00C723DD /* PSArticlesVController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85D7361D1935D0AB00C723DD /* PSArticlesVController.xib */; };
 		85D736241935D2F800C723DD /* ArticleItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85D736221935D2F800C723DD /* ArticleItemCell.xib */; };
-		85D736261935DA3900C723DD /* photoDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = 85D736251935DA3900C723DD /* photoDefault.png */; };
 		85D7362F1935F36700C723DD /* PSArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D7362A1935F36700C723DD /* PSArticle.m */; };
 		85D736301935F36700C723DD /* PSArticlesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D7362C1935F36700C723DD /* PSArticlesManager.m */; };
 		85D736311935F36700C723DD /* PSArticlesTransmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D7362E1935F36700C723DD /* PSArticlesTransmitter.m */; };
 		85D7363919361D4400C723DD /* ImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D7363819361D4400C723DD /* ImageLoader.m */; };
+		85D7364219362A0500C723DD /* ArticleItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D7364119362A0500C723DD /* ArticleItemCell.m */; };
+		85D7364619362D1100C723DD /* PSArticleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D7364419362D1100C723DD /* PSArticleController.m */; };
+		85D7364719362D1100C723DD /* PSArticleController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85D7364519362D1100C723DD /* PSArticleController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +64,6 @@
 		85D7361D1935D0AB00C723DD /* PSArticlesVController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSArticlesVController.xib; sourceTree = "<group>"; };
 		85D736201935D2F800C723DD /* ArticleItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleItemCell.h; sourceTree = "<group>"; };
 		85D736221935D2F800C723DD /* ArticleItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleItemCell.xib; sourceTree = "<group>"; };
-		85D736251935DA3900C723DD /* photoDefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photoDefault.png; sourceTree = "<group>"; };
 		85D736291935F36700C723DD /* PSArticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSArticle.h; sourceTree = "<group>"; };
 		85D7362A1935F36700C723DD /* PSArticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSArticle.m; sourceTree = "<group>"; };
 		85D7362B1935F36700C723DD /* PSArticlesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSArticlesManager.h; sourceTree = "<group>"; };
@@ -71,6 +72,10 @@
 		85D7362E1935F36700C723DD /* PSArticlesTransmitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSArticlesTransmitter.m; sourceTree = "<group>"; };
 		85D7363719361D4400C723DD /* ImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageLoader.h; sourceTree = "<group>"; };
 		85D7363819361D4400C723DD /* ImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLoader.m; sourceTree = "<group>"; };
+		85D7364119362A0500C723DD /* ArticleItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleItemCell.m; sourceTree = "<group>"; };
+		85D7364319362D1100C723DD /* PSArticleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSArticleController.h; sourceTree = "<group>"; };
+		85D7364419362D1100C723DD /* PSArticleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSArticleController.m; sourceTree = "<group>"; };
+		85D7364519362D1100C723DD /* PSArticleController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSArticleController.xib; sourceTree = "<group>"; };
 		B1097E36DA214BD0A66184E3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		E0F2F4AA06E9439993752505 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -177,12 +182,15 @@
 		85D7361A1935D0AB00C723DD /* GUI */ = {
 			isa = PBXGroup;
 			children = (
-				85D736251935DA3900C723DD /* photoDefault.png */,
 				85D736201935D2F800C723DD /* ArticleItemCell.h */,
+				85D7364119362A0500C723DD /* ArticleItemCell.m */,
 				85D736221935D2F800C723DD /* ArticleItemCell.xib */,
 				85D7361B1935D0AB00C723DD /* PSArticlesVController.h */,
 				85D7361C1935D0AB00C723DD /* PSArticlesVController.m */,
 				85D7361D1935D0AB00C723DD /* PSArticlesVController.xib */,
+				85D7364319362D1100C723DD /* PSArticleController.h */,
+				85D7364419362D1100C723DD /* PSArticleController.m */,
+				85D7364519362D1100C723DD /* PSArticleController.xib */,
 			);
 			path = GUI;
 			sourceTree = "<group>";
@@ -298,9 +306,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				85D735F61935CF7000C723DD /* InfoPlist.strings in Resources */,
-				85D736261935DA3900C723DD /* photoDefault.png in Resources */,
 				85D735FE1935CF7000C723DD /* Images.xcassets in Resources */,
 				85D7361F1935D0AB00C723DD /* PSArticlesVController.xib in Resources */,
+				85D7364719362D1100C723DD /* PSArticleController.xib in Resources */,
 				85D736241935D2F800C723DD /* ArticleItemCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,8 +366,10 @@
 				85D7362F1935F36700C723DD /* PSArticle.m in Sources */,
 				85D735F81935CF7000C723DD /* main.m in Sources */,
 				85D735FC1935CF7000C723DD /* PSAppDelegate.m in Sources */,
+				85D7364619362D1100C723DD /* PSArticleController.m in Sources */,
 				85D736301935F36700C723DD /* PSArticlesManager.m in Sources */,
 				85D7361E1935D0AB00C723DD /* PSArticlesVController.m in Sources */,
+				85D7364219362A0500C723DD /* ArticleItemCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

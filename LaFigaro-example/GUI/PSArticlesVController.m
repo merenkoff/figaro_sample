@@ -9,6 +9,7 @@
 #import "PSArticlesVController.h"
 #import "ArticleItemCell.h"
 
+#import "PSArticleController.h"
 #import "PSArticlesManager.h"
 #import "PSArticlesTransmitter.h"
 
@@ -43,7 +44,6 @@ NSString *const kReuseCellID = @"kReuseArticleItemCell";
     cellNib = [UINib nibWithNibName:@"ArticleItemCell" bundle:classBundle];
  
     [_tableView registerNib:cellNib forCellReuseIdentifier:kReuseCellID];
-
 }
 
 - (void)viewDidLoad
@@ -88,10 +88,42 @@ NSString *const kReuseCellID = @"kReuseArticleItemCell";
     ArticleItemCell *cell = [tableView dequeueReusableCellWithIdentifier:kReuseCellID forIndexPath:indexPath];
     NSAssert(cell, @"ERROR: You must register cell: [_tableView registerNib:cell forCellReuseIdentifier:cellID]; ");
 
-    cell.title = [_articles[indexPath.row] title];
-    cell.description = [_articles[indexPath.row] subtitle];
-    cell.imageLink = [_articles[indexPath.row] imageLink];
+    PSArticle *article = [self articleAtIndexPath:indexPath];
+    cell.title = article.title;
+    cell.description = article.subtitle;
+    cell.imageLink = article.imageLink;
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    __weak PSArticle *article = [self articleAtIndexPath:indexPath];
+    [[PSArticlesTransmitter sharedArticlesTransmitter] downloadArticle:article.ID
+                                                              complete:^(NSDictionary *fullArticle)
+    {
+        if (fullArticle) {
+            [article setValuesForKeysWithDictionary:fullArticle];
+            NSLog(@"Article \n %@", fullArticle);
+            
+            NSBundle *classBundle = [NSBundle bundleForClass:[PSArticleController class]];
+            PSArticleController *articleController = [[PSArticleController alloc] initWithNibName:@"PSArticleController" bundle:classBundle];
+            [articleController view];
+            [self.navigationController pushViewController:articleController animated:YES];
+            articleController.article = article;
+        } else {
+            //We must show error because detail page didn't downloaded
+            
+        }
+        
+    }];
+    
+}
+
+#pragma mark - Article
+
+- (PSArticle *)articleAtIndexPath:(NSIndexPath *)indexPath
+{
+    return _articles[indexPath.row];
 }
 
 @end

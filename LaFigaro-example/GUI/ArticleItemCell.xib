@@ -14,7 +14,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="76"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="photoDefault.png" translatesAutoresizingMaskIntoConstraints="NO" id="4" userLabel="DetailImage">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4" userLabel="DetailImage">
                         <rect key="frame" x="223" y="9" width="87" height="57"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                     </imageView>
@@ -45,7 +45,4 @@ second line</string>
             </connections>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="photoDefault.png" width="174" height="114"/>
-    </resources>
 </document>

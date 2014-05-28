@@ -17,7 +17,8 @@
 - (instancetype)initWithDictionary:(NSDictionary*)userDictionary {
 	if ((self = [super init])) {
         [self setValuesForKeysWithDictionary:userDictionary];
-        NSLog(@"%@", userDictionary);
+        
+        _ID = userDictionary[@"id"];
         _date = [NSDate dateWithTimeIntervalSince1970:[userDictionary[@"date"] integerValue]];
     }
 	return self;
@@ -39,6 +40,10 @@
     return [self getImageLinkWidth:174 height:114];
 }
 
+- (NSString *)detailImageLink
+{
+    return [self getImageLinkWidth:805 height:453];
+}
 - (NSString *)getImageLinkWidth:(NSInteger)width height:(NSInteger)height
 {
     if (self.thumb[@"link"] && ![self.thumb[@"link"] isEqualToString:@""]) {
@@ -46,6 +51,11 @@
     }
     
     return nil;  
+}
+
+-(NSString *)getContent
+{
+    return [NSString stringWithFormat:@"<html><body>%@</body></html>", _content];
 }
 
 @end
