@@ -69,7 +69,7 @@
               }
           }
           failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-              NSLog(@"ERROR %@", [error description]);
+//              NSLog(@"ERROR %@", [error description]);
               complete(@"",@[]);
           }];
 }

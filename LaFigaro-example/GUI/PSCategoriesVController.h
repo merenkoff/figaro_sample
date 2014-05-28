@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <GRKPageViewController/GRKPageViewController.h>
 
-@interface PSCategoriesVController : UIPageViewController <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
+@interface PSCategoriesVController : GRKPageViewController <GRKPageViewControllerDataSource, GRKPageViewControllerDelegate>//<UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
 @property (nonatomic, assign) NSInteger currentCattegory;
 @property (nonatomic, assign) NSInteger maxCattegory;

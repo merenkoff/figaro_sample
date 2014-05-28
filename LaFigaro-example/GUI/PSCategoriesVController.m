@@ -16,8 +16,6 @@
 {
     NSArray *_categories;
     NSArray *_categoryNames;
-    PSArticlesVController *_articlesController;
-    PSArticlesVController *_articlesControllerNext;
 }
 
 @end
@@ -37,10 +35,8 @@
 {
     self.delegate = self;
     self.dataSource = self;
-    _articlesController = [[PSArticlesVController alloc] initWithNibName:@"PSArticlesVController" bundle:nil];
-    _articlesControllerNext = [[PSArticlesVController alloc] initWithNibName:@"PSArticlesVController" bundle:nil];
-    
-    [self setViewControllers:@[_articlesController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+
+    [self setCurrentIndex:0];
 }
 
 - (void)configDataAndFiles
@@ -68,8 +64,8 @@
         _currentCattegory = 0;
         _maxCattegory = [_categories count] - 1;
         
-        [_articlesController reloadDataForCategory:_categories[_currentCattegory] withName:_categoryNames[_currentCattegory]];
-        [_articlesControllerNext reloadDataForCategory:_categories[_maxCattegory] withName:_categoryNames[_maxCattegory]];
+        [self setCurrentIndex:0 animated:YES];
+        [self performSelector:@selector(initPages) withObject:nil];
     }];
     
 }
@@ -83,40 +79,16 @@
 
 
 #pragma mark - UIPageView Data source & Delegate
-
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
+- (NSUInteger)pageCount
 {
-    NSLog(@"Current category: %d", self.currentCattegory);
-    if (_currentCattegory > 0) {
-        
-        _articlesControllerNext.currentCattegory = _currentCattegory - 1;
-        [_articlesControllerNext reloadDataForCategory:_categories[_articlesControllerNext.currentCattegory] withName:_categoryNames[_articlesControllerNext.currentCattegory]];
-        return _articlesControllerNext;
-    }
-
-    return nil;
+    return [_categories count];
 }
 
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
+- (UIViewController *)viewControllerForIndex:(NSUInteger)index
 {
-    NSLog(@"Current category: %d", self.currentCattegory);
-    if (_currentCattegory < _maxCattegory) {
-        _articlesControllerNext.currentCattegory = _currentCattegory + 1;
-        [_articlesControllerNext reloadDataForCategory:_categories[_articlesControllerNext.currentCattegory] withName:_categoryNames[_articlesControllerNext.currentCattegory]];
-        return _articlesControllerNext;
-    }
-    
-    return nil;
-}
-
-- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed
-{
-    _currentCattegory = _articlesControllerNext.currentCattegory;
-    [_articlesControllerNext reloadDataForCategory:_categories[_currentCattegory] withName:_categoryNames[_currentCattegory]];
-    
-    id changeController = _articlesController;
-    _articlesController = _articlesControllerNext;
-    _articlesControllerNext = changeController;
+    PSArticlesVController *articlesVController = [[PSArticlesVController alloc] initWithNibName:@"PSArticlesVController" bundle:nil];
+    [articlesVController reloadDataForCategory:_categories[index] withName:_categoryNames[index]];
+    return articlesVController;
 }
 
 @end

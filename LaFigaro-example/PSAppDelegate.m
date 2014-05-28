@@ -16,9 +16,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
-    PSCategoriesVController *_rootController = [[PSCategoriesVController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
-                                                                                  navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal
-                                                                                                options:nil];
+    PSCategoriesVController *_rootController = [PSCategoriesVController new];
     
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:_rootController];
     [_rootController.navigationController.navigationBar setTranslucent:NO];

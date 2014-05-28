@@ -190,7 +190,8 @@ const NSInteger kMiniImageSize = 100;
 {
     NSString *originURL = [urlString stringByReplacingOccurrencesOfString:@"?" withString:@"-"];
 	NSString *validName = [originURL  stringByReplacingOccurrencesOfString:@"/" withString:@"-"];
-	NSString *imageFileName = [validName stringByAppendingPathExtension:@"png"];
+    NSString *validName2 = [validName  stringByReplacingOccurrencesOfString:@":" withString:@"-"];
+	NSString *imageFileName = [validName2 stringByAppendingPathExtension:@"png"];
 	return [[self diskCachePath] stringByAppendingPathComponent:imageFileName];
 }
 
