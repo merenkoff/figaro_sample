@@ -1,0 +1,485 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		85D735EC1935CF7000C723DD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D735EB1935CF7000C723DD /* Foundation.framework */; };
+		85D735EE1935CF7000C723DD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D735ED1935CF7000C723DD /* CoreGraphics.framework */; };
+		85D735F01935CF7000C723DD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D735EF1935CF7000C723DD /* UIKit.framework */; };
+		85D735F61935CF7000C723DD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 85D735F41935CF7000C723DD /* InfoPlist.strings */; };
+		85D735F81935CF7000C723DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D735F71935CF7000C723DD /* main.m */; };
+		85D735FC1935CF7000C723DD /* PSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D735FB1935CF7000C723DD /* PSAppDelegate.m */; };
+		85D735FE1935CF7000C723DD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85D735FD1935CF7000C723DD /* Images.xcassets */; };
+		85D736051935CF7000C723DD /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D736041935CF7000C723DD /* XCTest.framework */; };
+		85D736061935CF7000C723DD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D735EB1935CF7000C723DD /* Foundation.framework */; };
+		85D736071935CF7000C723DD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D735EF1935CF7000C723DD /* UIKit.framework */; };
+		85D7360F1935CF7100C723DD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 85D7360D1935CF7100C723DD /* InfoPlist.strings */; };
+		85D736111935CF7100C723DD /* LaFigaro_exampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D736101935CF7100C723DD /* LaFigaro_exampleTests.m */; };
+		85D7361E1935D0AB00C723DD /* PSArticlesVController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D7361C1935D0AB00C723DD /* PSArticlesVController.m */; };
+		85D7361F1935D0AB00C723DD /* PSArticlesVController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85D7361D1935D0AB00C723DD /* PSArticlesVController.xib */; };
+		85D736231935D2F800C723DD /* ArticleItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D736211935D2F800C723DD /* ArticleItemCell.m */; };
+		85D736241935D2F800C723DD /* ArticleItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85D736221935D2F800C723DD /* ArticleItemCell.xib */; };
+		85D736261935DA3900C723DD /* photoDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = 85D736251935DA3900C723DD /* photoDefault.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		85D736081935CF7000C723DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 85D735E01935CF7000C723DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 85D735E71935CF7000C723DD;
+			remoteInfo = "LaFigaro-example";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		85D735E81935CF7000C723DD /* LaFigaro-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LaFigaro-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		85D735EB1935CF7000C723DD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		85D735ED1935CF7000C723DD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		85D735EF1935CF7000C723DD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		85D735F31935CF7000C723DD /* LaFigaro-example-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LaFigaro-example-Info.plist"; sourceTree = "<group>"; };
+		85D735F51935CF7000C723DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		85D735F71935CF7000C723DD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		85D735F91935CF7000C723DD /* LaFigaro-example-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LaFigaro-example-Prefix.pch"; sourceTree = "<group>"; };
+		85D735FA1935CF7000C723DD /* PSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSAppDelegate.h; sourceTree = "<group>"; };
+		85D735FB1935CF7000C723DD /* PSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSAppDelegate.m; sourceTree = "<group>"; };
+		85D735FD1935CF7000C723DD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		85D736031935CF7000C723DD /* LaFigaro-exampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LaFigaro-exampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		85D736041935CF7000C723DD /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		85D7360C1935CF7100C723DD /* LaFigaro-exampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LaFigaro-exampleTests-Info.plist"; sourceTree = "<group>"; };
+		85D7360E1935CF7100C723DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		85D736101935CF7100C723DD /* LaFigaro_exampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LaFigaro_exampleTests.m; sourceTree = "<group>"; };
+		85D7361B1935D0AB00C723DD /* PSArticlesVController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSArticlesVController.h; sourceTree = "<group>"; };
+		85D7361C1935D0AB00C723DD /* PSArticlesVController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSArticlesVController.m; sourceTree = "<group>"; };
+		85D7361D1935D0AB00C723DD /* PSArticlesVController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSArticlesVController.xib; sourceTree = "<group>"; };
+		85D736201935D2F800C723DD /* ArticleItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleItemCell.h; sourceTree = "<group>"; };
+		85D736211935D2F800C723DD /* ArticleItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleItemCell.m; sourceTree = "<group>"; };
+		85D736221935D2F800C723DD /* ArticleItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleItemCell.xib; sourceTree = "<group>"; };
+		85D736251935DA3900C723DD /* photoDefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photoDefault.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		85D735E51935CF7000C723DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85D735EE1935CF7000C723DD /* CoreGraphics.framework in Frameworks */,
+				85D735F01935CF7000C723DD /* UIKit.framework in Frameworks */,
+				85D735EC1935CF7000C723DD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85D736001935CF7000C723DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85D736051935CF7000C723DD /* XCTest.framework in Frameworks */,
+				85D736071935CF7000C723DD /* UIKit.framework in Frameworks */,
+				85D736061935CF7000C723DD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		85D735DF1935CF7000C723DD = {
+			isa = PBXGroup;
+			children = (
+				85D735F11935CF7000C723DD /* LaFigaro-example */,
+				85D7360A1935CF7000C723DD /* LaFigaro-exampleTests */,
+				85D735EA1935CF7000C723DD /* Frameworks */,
+				85D735E91935CF7000C723DD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		85D735E91935CF7000C723DD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				85D735E81935CF7000C723DD /* LaFigaro-example.app */,
+				85D736031935CF7000C723DD /* LaFigaro-exampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		85D735EA1935CF7000C723DD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				85D735EB1935CF7000C723DD /* Foundation.framework */,
+				85D735ED1935CF7000C723DD /* CoreGraphics.framework */,
+				85D735EF1935CF7000C723DD /* UIKit.framework */,
+				85D736041935CF7000C723DD /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		85D735F11935CF7000C723DD /* LaFigaro-example */ = {
+			isa = PBXGroup;
+			children = (
+				85D735FA1935CF7000C723DD /* PSAppDelegate.h */,
+				85D735FB1935CF7000C723DD /* PSAppDelegate.m */,
+				85D7361A1935D0AB00C723DD /* GUI */,
+				85D735FD1935CF7000C723DD /* Images.xcassets */,
+				85D735F21935CF7000C723DD /* Supporting Files */,
+			);
+			path = "LaFigaro-example";
+			sourceTree = "<group>";
+		};
+		85D735F21935CF7000C723DD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				85D735F31935CF7000C723DD /* LaFigaro-example-Info.plist */,
+				85D735F41935CF7000C723DD /* InfoPlist.strings */,
+				85D735F71935CF7000C723DD /* main.m */,
+				85D735F91935CF7000C723DD /* LaFigaro-example-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		85D7360A1935CF7000C723DD /* LaFigaro-exampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				85D736101935CF7100C723DD /* LaFigaro_exampleTests.m */,
+				85D7360B1935CF7100C723DD /* Supporting Files */,
+			);
+			path = "LaFigaro-exampleTests";
+			sourceTree = "<group>";
+		};
+		85D7360B1935CF7100C723DD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				85D7360C1935CF7100C723DD /* LaFigaro-exampleTests-Info.plist */,
+				85D7360D1935CF7100C723DD /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		85D7361A1935D0AB00C723DD /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				85D736251935DA3900C723DD /* photoDefault.png */,
+				85D736201935D2F800C723DD /* ArticleItemCell.h */,
+				85D736211935D2F800C723DD /* ArticleItemCell.m */,
+				85D736221935D2F800C723DD /* ArticleItemCell.xib */,
+				85D7361B1935D0AB00C723DD /* PSArticlesVController.h */,
+				85D7361C1935D0AB00C723DD /* PSArticlesVController.m */,
+				85D7361D1935D0AB00C723DD /* PSArticlesVController.xib */,
+			);
+			path = GUI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		85D735E71935CF7000C723DD /* LaFigaro-example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85D736141935CF7100C723DD /* Build configuration list for PBXNativeTarget "LaFigaro-example" */;
+			buildPhases = (
+				85D735E41935CF7000C723DD /* Sources */,
+				85D735E51935CF7000C723DD /* Frameworks */,
+				85D735E61935CF7000C723DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "LaFigaro-example";
+			productName = "LaFigaro-example";
+			productReference = 85D735E81935CF7000C723DD /* LaFigaro-example.app */;
+			productType = "com.apple.product-type.application";
+		};
+		85D736021935CF7000C723DD /* LaFigaro-exampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85D736171935CF7100C723DD /* Build configuration list for PBXNativeTarget "LaFigaro-exampleTests" */;
+			buildPhases = (
+				85D735FF1935CF7000C723DD /* Sources */,
+				85D736001935CF7000C723DD /* Frameworks */,
+				85D736011935CF7000C723DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				85D736091935CF7000C723DD /* PBXTargetDependency */,
+			);
+			name = "LaFigaro-exampleTests";
+			productName = "LaFigaro-exampleTests";
+			productReference = 85D736031935CF7000C723DD /* LaFigaro-exampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		85D735E01935CF7000C723DD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = PS;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = PlaySoft;
+				TargetAttributes = {
+					85D736021935CF7000C723DD = {
+						TestTargetID = 85D735E71935CF7000C723DD;
+					};
+				};
+			};
+			buildConfigurationList = 85D735E31935CF7000C723DD /* Build configuration list for PBXProject "LaFigaro-example" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 85D735DF1935CF7000C723DD;
+			productRefGroup = 85D735E91935CF7000C723DD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				85D735E71935CF7000C723DD /* LaFigaro-example */,
+				85D736021935CF7000C723DD /* LaFigaro-exampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		85D735E61935CF7000C723DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85D735F61935CF7000C723DD /* InfoPlist.strings in Resources */,
+				85D736261935DA3900C723DD /* photoDefault.png in Resources */,
+				85D735FE1935CF7000C723DD /* Images.xcassets in Resources */,
+				85D7361F1935D0AB00C723DD /* PSArticlesVController.xib in Resources */,
+				85D736241935D2F800C723DD /* ArticleItemCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85D736011935CF7000C723DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85D7360F1935CF7100C723DD /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		85D735E41935CF7000C723DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85D735F81935CF7000C723DD /* main.m in Sources */,
+				85D735FC1935CF7000C723DD /* PSAppDelegate.m in Sources */,
+				85D7361E1935D0AB00C723DD /* PSArticlesVController.m in Sources */,
+				85D736231935D2F800C723DD /* ArticleItemCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85D735FF1935CF7000C723DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85D736111935CF7100C723DD /* LaFigaro_exampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		85D736091935CF7000C723DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 85D735E71935CF7000C723DD /* LaFigaro-example */;
+			targetProxy = 85D736081935CF7000C723DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		85D735F41935CF7000C723DD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				85D735F51935CF7000C723DD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		85D7360D1935CF7100C723DD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				85D7360E1935CF7100C723DD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		85D736121935CF7100C723DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		85D736131935CF7100C723DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		85D736151935CF7100C723DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LaFigaro-example/LaFigaro-example-Prefix.pch";
+				INFOPLIST_FILE = "LaFigaro-example/LaFigaro-example-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		85D736161935CF7100C723DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LaFigaro-example/LaFigaro-example-Prefix.pch";
+				INFOPLIST_FILE = "LaFigaro-example/LaFigaro-example-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		85D736181935CF7100C723DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LaFigaro-example.app/LaFigaro-example";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LaFigaro-example/LaFigaro-example-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "LaFigaro-exampleTests/LaFigaro-exampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		85D736191935CF7100C723DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LaFigaro-example.app/LaFigaro-example";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LaFigaro-example/LaFigaro-example-Prefix.pch";
+				INFOPLIST_FILE = "LaFigaro-exampleTests/LaFigaro-exampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		85D735E31935CF7000C723DD /* Build configuration list for PBXProject "LaFigaro-example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85D736121935CF7100C723DD /* Debug */,
+				85D736131935CF7100C723DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85D736141935CF7100C723DD /* Build configuration list for PBXNativeTarget "LaFigaro-example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85D736151935CF7100C723DD /* Debug */,
+				85D736161935CF7100C723DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		85D736171935CF7100C723DD /* Build configuration list for PBXNativeTarget "LaFigaro-exampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85D736181935CF7100C723DD /* Debug */,
+				85D736191935CF7100C723DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 85D735E01935CF7000C723DD /* Project object */;
+}
