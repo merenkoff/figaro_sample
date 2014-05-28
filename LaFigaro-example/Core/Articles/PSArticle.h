@@ -26,4 +26,5 @@
 
 + (instancetype)articleWithDictionary:(NSDictionary *)userDictionary;
 
+- (void)addDetailFromDictionary:(NSDictionary *)dataDictionary;
 @end

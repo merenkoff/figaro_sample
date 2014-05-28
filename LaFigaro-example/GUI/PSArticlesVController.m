@@ -102,7 +102,8 @@ NSString *const kReuseCellID = @"kReuseArticleItemCell";
                                                               complete:^(NSDictionary *fullArticle)
     {
         if (fullArticle) {
-            [article setValuesForKeysWithDictionary:fullArticle];
+            [article addDetailFromDictionary:fullArticle];
+            
             NSLog(@"Article \n %@", fullArticle);
             
             NSBundle *classBundle = [NSBundle bundleForClass:[PSArticleController class]];
